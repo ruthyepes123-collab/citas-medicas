@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendar Cita</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6e6e6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: #fffdfa;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #b71c1c;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      color: #222;
+      background-color: #fff;
+    }
+
+    input:focus {
+      border-color: #1976d2;
+      outline: none;
+      box-shadow: 0 0 4px rgba(25, 118, 210, 0.5);
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #d32f2f;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #b71c1c;
+    }
+
+    .top-links {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 15px;
+    }
+
+    .top-links a {
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .top-links a:hover,
+    .top-links a:focus {
+      text-decoration: underline;
+    }
+
+    .perfil {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .perfil img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .perfil p {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    /* Estilo para elementos solo accesibles por lectores de pantalla */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <nav class="top-links" aria-label="Navegación principal">
+      <a href="/historial" role="link">Ver Historial</a>
+    </nav>
+
+    <section aria-labelledby="agendar-cita-heading">
+      <h1 id="agendar-cita-heading">Agendar Cita</h1>
+
+      <form action="/reservar" method="post" aria-describedby="form-description">
+        <p id="form-description" class="sr-only">Formulario para reservar una cita con fecha y hora.</p>
+
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required aria-required="true" aria-label="Selecciona una fecha para la cita" />
+
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required aria-required="true" aria-label="Selecciona una hora para la cita" />
+
+        <button type="submit" class="btn" aria-label="Reservar cita">Reservar</button>
+      </form>
+    </section>
+
+    <section class="perfil" aria-label="Perfil del usuario">
+      <img src="https://via.placeholder.com/60x60.png?text=👤" alt="Foto de perfil del usuario" role="img" />
+      <p>Perfil</p>
+    </section>
+  </main>
+</body>
+</html>
